@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "4b3535af-65f3-46e7-8ca1-47b71722280f",
+		"name": "Recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllRecipe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "rohan@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rohan",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://ARPGL004223.persistent.co.in:8094/recipe",
+					"protocol": "http",
+					"host": [
+						"ARPGL004223",
+						"persistent",
+						"co",
+						"in"
+					],
+					"port": "8094",
+					"path": [
+						"recipe"
+					],
+					"query": [
+						{
+							"key": "recipe_id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateNewRecipe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "rohan@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rohan",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recipe_name\": \"Paneer Tikka Masala\",\r\n  \"vegetarian\": true,\r\n  \"suitable_for\": 4,\r\n  \"ingredients\": [\r\n    \"Paneer\",\r\n    \"Onion\",\r\n    \"Salt\",\r\n    \"Oil\"\r\n\r\n  ],\r\n  \"cooking_instructions\": \"Parcel Order\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ARPGL004223.persistent.co.in:8094/recipe",
+					"protocol": "http",
+					"host": [
+						"ARPGL004223",
+						"persistent",
+						"co",
+						"in"
+					],
+					"port": "8094",
+					"path": [
+						"recipe"
+					],
+					"query": [
+						{
+							"key": "recipe_id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRecipe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "rohan@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rohan",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://ARPGL004223.persistent.co.in:8094/recipe?recipe_id=5",
+					"protocol": "http",
+					"host": [
+						"ARPGL004223",
+						"persistent",
+						"co",
+						"in"
+					],
+					"port": "8094",
+					"path": [
+						"recipe"
+					],
+					"query": [
+						{
+							"key": "recipe_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateRecipe",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "rohan@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rohan",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"recipe_name\": \"dal3\",\r\n  \"vegetarian\": true,\r\n  \"suitable_for\": 5,\r\n  \"ingredients\": [\r\n    \"vadadal\",\r\n    \"Vada\",\r\n    \"sambar\",\r\n    \"Wheat\"\r\n\r\n  ],\r\n  \"cooking_instructions\": \"sssss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ARPGL004223.persistent.co.in:8094/recipe?recipe_id=1",
+					"protocol": "http",
+					"host": [
+						"ARPGL004223",
+						"persistent",
+						"co",
+						"in"
+					],
+					"port": "8094",
+					"path": [
+						"recipe"
+					],
+					"query": [
+						{
+							"key": "recipe_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
