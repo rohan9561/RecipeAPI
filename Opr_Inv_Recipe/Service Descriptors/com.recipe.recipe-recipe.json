@@ -1,0 +1,221 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "recipe",
+    "description" : "recipe service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/recipe" : {
+      "post" : {
+        "summary" : "postRecipe",
+        "description" : "postRecipe",
+        "operationId" : "post-recipe",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/createNewRecipeRequestElement"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a createNewRecipeResponseElement to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/createNewRecipeResponseElement"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "getRecipe",
+        "description" : "getRecipe",
+        "operationId" : "get-recipe",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a getRecipeListResponseElement to be returned",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/getRecipeListResponseElement",
+                "uniqueItems" : false
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "putRecipe",
+        "description" : "putRecipe",
+        "operationId" : "put-recipe",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/updateRecipeRequestElement"
+          },
+          "required" : true
+        }, {
+          "name" : "recipe_id",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a updateRecipeResponseElement to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/updateRecipeResponseElement"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "deleteRecipe",
+        "description" : "deleteRecipe",
+        "operationId" : "delete-recipe",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "recipe_id",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "getRecipeListResponseElement" : {
+      "type" : "object",
+      "properties" : {
+        "recipe_id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "recipe_name" : {
+          "type" : "string"
+        },
+        "creation_date" : {
+          "type" : "string"
+        },
+        "vegetarian" : {
+          "type" : "boolean"
+        },
+        "suitable_for" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ingredients" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "uniqueItems" : false
+          }
+        },
+        "cooking_instructions" : {
+          "type" : "string"
+        }
+      }
+    },
+    "updateRecipeResponseElement" : {
+      "type" : "object",
+      "properties" : {
+        "statusCode" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "statusMessage" : {
+          "type" : "string"
+        }
+      }
+    },
+    "createNewRecipeResponseElement" : {
+      "type" : "object",
+      "properties" : {
+        "statusCode" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "statusMessage" : {
+          "type" : "string"
+        }
+      }
+    },
+    "createNewRecipeRequestElement" : {
+      "type" : "object",
+      "properties" : {
+        "recipe_name" : {
+          "type" : "string"
+        },
+        "vegetarian" : {
+          "type" : "boolean"
+        },
+        "suitable_for" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ingredients" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "uniqueItems" : false
+          }
+        },
+        "cooking_instructions" : {
+          "type" : "string"
+        }
+      }
+    },
+    "updateRecipeRequestElement" : {
+      "type" : "object",
+      "properties" : {
+        "recipe_name" : {
+          "type" : "string"
+        },
+        "vegetarian" : {
+          "type" : "boolean"
+        },
+        "suitable_for" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ingredients" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "uniqueItems" : false
+          }
+        },
+        "cooking_instructions" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/Opr_Inv_Recipe/Service Descriptors/com.recipe.recipe-recipe.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1690186421634"
+    },
+    {
+        "jsonSchemaLocation": "/Opr_Inv_Recipe/Service Descriptors/com.recipe.recipe-recipe.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1690186437408"
+    },
+    {
+        "jsonSchemaLocation": "/Opr_Inv_Recipe/Service Descriptors/com.recipe.recipe-recipe.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1690186455993"
+    },
+    {
+        "jsonSchemaLocation": "/Opr_Inv_Recipe/Service Descriptors/com.recipe.recipe-recipe.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1690186470211"
+    },
+    {
+        "jsonSchemaLocation": "/Opr_Inv_Recipe/Service Descriptors/com.recipe.recipe-recipe.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1690186498574"
+    }
+]}

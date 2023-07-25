@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_nGLL4Cn5Ee6v7eW1UlO6wQ" targetNamespace="http://tns.tibco.com/bw/composite/Opr_Inv_Recipe" name="Opr_Inv_Recipe" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_udqhYCn6Ee6v7eW1UlO6wQ" name="recipe" promote="Componentrecipe/recipe">
+    <sca:interface.wsdl xmi:id="_udwoACn6Ee6v7eW1UlO6wQ" interface="http://xmlns.example.com/20230724134852PLT#wsdl.interface(recipe)" scaext:wsdlLocation="../Processes/com/recipe/recipe.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ud4j0Cn6Ee6v7eW1UlO6wQ" name="RestService" path="/recipe" docBasePath="http://localhost:7777/Opr_Inv_Recipe" docResourcePath="recipe" basePath="/" connector="opr_inv_recipe.recipe" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/com.recipe.recipe-recipe.json" policySets="opr_inv_recipe.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_ud4j0in6Ee6v7eW1UlO6wQ" operationName="post" nickname="post-recipe" httpMethod="POST" notes="postRecipe" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ud4j0yn6Ee6v7eW1UlO6wQ" operationName="get" nickname="get-recipe" httpMethod="GET" notes="getRecipe" responseStyle="array" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ud4j1Cn6Ee6v7eW1UlO6wQ" operationName="put" nickname="put-recipe" httpMethod="PUT" notes="putRecipe" responseStyle="element" requestStyle="element" outputPartName="item">
+        <parameters xmi:id="_uiCl4CoMEe6h-79IjEquAg">
+          <parameterMapping xmi:id="_uiCl4SoMEe6h-79IjEquAg" parameterName="recipe_id" parameterType="Query" dataType="integer#int32"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ud4j1Sn6Ee6v7eW1UlO6wQ" operationName="delete" nickname="delete-recipe" httpMethod="DELETE" notes="deleteRecipe" responseStyle="element" outputPartName="msg">
+        <parameters xmi:id="_RT-bICoKEe6h-79IjEquAg">
+          <parameterMapping xmi:id="_RT-bISoKEe6h-79IjEquAg" parameterName="recipe_id" parameterType="Query" dataType="integer#int32"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_ueMs4yn6Ee6v7eW1UlO6wQ"/>
+      <advancedConfig xmi:id="_ud4j0Sn6Ee6v7eW1UlO6wQ" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ud4j1in6Ee6v7eW1UlO6wQ" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_oPkc4Cn5Ee6v7eW1UlO6wQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oPtm0Cn5Ee6v7eW1UlO6wQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oPx4QCn5Ee6v7eW1UlO6wQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oP07kCn5Ee6v7eW1UlO6wQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oP3X0Cn5Ee6v7eW1UlO6wQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oP9ecCn5Ee6v7eW1UlO6wQ" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_oQEMICn5Ee6v7eW1UlO6wQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_vFXtECpnEe6fop4R1PJ-uw" name="retryCount" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_XDWWgCq_Ee6XG7bH9_TbIw" name="retryInterval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_u0Pg0CpnEe6fop4R1PJ-uw" name="/JDBC/DatabaseURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yaSacCpnEe6fop4R1PJ-uw" name="/JDBC/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yfmYQCpnEe6fop4R1PJ-uw" name="/JDBC/Password" type="property:password" scaext:simpleValue="#!qzixCHDodk/2UGftSJ2MLQ==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yj964CpnEe6fop4R1PJ-uw" name="/JDBC/TimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ymtF0CpnEe6fop4R1PJ-uw" name="/JDBC/MaxRows" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yo1z0CpnEe6fop4R1PJ-uw" name="/JDBC/MaxConnections" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yqq_0CpnEe6fop4R1PJ-uw" name="/JDBC/LoginTimeOut" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ywQDYCpnEe6fop4R1PJ-uw" name="/JDBC/Schema" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_osOSUCpqEe6fop4R1PJ-uw" name="/HTTPConnector/Port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_r75TUCpqEe6fop4R1PJ-uw" name="/HTTPConnector/AcceptorThread" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_r9sDECpqEe6fop4R1PJ-uw" name="/HTTPConnector/QueueSize" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_r_lggCpqEe6fop4R1PJ-uw" name="/HTTPConnector/MinQTP" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sBQUcCpqEe6fop4R1PJ-uw" name="/HTTPConnector/MaxQTP" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ixJlkCprEe6fop4R1PJ-uw" name="/HTTPConnector/HostName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_udbQ0Cn6Ee6v7eW1UlO6wQ" name="Componentrecipe" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_udbQ0Sn6Ee6v7eW1UlO6wQ" processName="com.recipe.recipe"/>
+    <sca:service xmi:id="_udneECn6Ee6v7eW1UlO6wQ" name="recipe">
+      <sca:interface.wsdl xmi:id="_udneESn6Ee6v7eW1UlO6wQ" interface="http://xmlns.example.com/20230724134852PLT#wsdl.interface(recipe)" scaext:wsdlLocation="../Processes/com/recipe/recipe.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
