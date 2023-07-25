@@ -1,0 +1,29 @@
+
+-------- Create Table -----------------------
+
+CREATE TABLE INTFACE.RECIPE (RECIPE_ID INT IDENTITY(1,1) PRIMARY KEY, RECIPE_NAME NVARCHAR(30),
+SUITABLE_FOR INT(3),
+INGREDIENT NVARCHAR(100),
+COOKING_INSTRUCTIONS NVARCHAR(100),
+VEGETARIAN BIT,
+CREATED_DATE DATETIME NOT NULL DEFAULT GETDATE())
+
+-------- Insert Into Table -----------------------
+  
+INSERT INTO INTFACE.RECIPE (RECIPE_NAME, VEGETARIAN, SUITABLE_FOR,
+  INGREDIENT, COOKING_INSTRUCTIONS)
+  VALUES (?, ?, ?, ?, ?)
+  
+-------- Delete From Table -----------------------
+  
+DELETE FROM INTFACE.RECIPE WHERE RECIPE_ID = ?
+  
+-------- Update Into Table -----------------------
+  
+UPDATE INTFACE.RECIPE SET RECIPE_NAME = ?, VEGETARIAN = ?, SUITABLE_FOR = ?, 
+INGREDIENT = ?, COOKING_INSTRUCTIONS = ? WHERE recipe_id = ?;
+
+
+-------- Select From Table -----------------------
+
+SELECT * FROM INTFACE.RECIPE;
