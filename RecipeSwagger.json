@@ -1,0 +1,271 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Recipe Management API",
+    "description": "An API Manage Get, Create, Update and Delete Recipes",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/"
+    }
+  ],
+  "paths": {
+    "/recipe": {
+      "get": {
+        "summary": "Get All Recipes",
+        "description": "Get All Recipes",
+        "operationId": "get-recipe",
+        "responses": {
+          "200": {
+            "description": "a getRecipeListResponseElement to be returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/getRecipeListResponseElement"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a recipe by ID",
+        "description": "Update a recipe by ID",
+        "operationId": "put-recipe",
+        "parameters": [
+          {
+            "name": "recipe_id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateRecipeRequestElement"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "a updateRecipeResponseElement to be returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/updateRecipeResponseElement"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "post": {
+        "summary": "Create a new recipe",
+        "description": "Create a new recipe",
+        "operationId": "post-recipe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createNewRecipeRequestElement"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "a createNewRecipeResponseElement to be returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/createNewRecipeResponseElement"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "delete": {
+        "summary": "Delete a recipe by ID",
+        "description": "Delete a recipe by ID",
+        "operationId": "delete-recipe",
+        "parameters": [
+          {
+            "name": "recipe_id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "a string to be returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Record Removed From Database"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "getRecipeListResponseElement": {
+        "type": "object",
+        "properties": {
+          "recipe_id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+          },
+          "recipe_name": {
+            "type": "string",
+            "example": "Paneer Tikka Masala"
+          },
+          "creation_date": {
+            "type": "string",
+            "example": "25-07-2023 04:34"
+          },
+          "vegetarian": {
+            "type": "boolean",
+            "example": true
+          },
+          "suitable_for": {
+            "type": "integer",
+            "format": "int32",
+            "example": 4
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Paneer, Onion, Salt, Oil"
+            }
+          },
+          "cooking_instructions": {
+            "type": "string",
+            "example": "Parcel Order"
+          }
+        }
+      },
+      "updateRecipeResponseElement": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "example": 200
+          },
+          "statusMessage": {
+            "type": "string",
+            "example": "Recipe Updated Successfully"
+          }
+        }
+      },
+      "createNewRecipeResponseElement": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "integer",
+            "format": "int32",
+            "example": 200
+          },
+          "statusMessage": {
+            "type": "string",
+            "example": "Recipe Created Successfully"
+          }
+        }
+      },
+      "createNewRecipeRequestElement": {
+        "type": "object",
+        "properties": {
+          "recipe_name": {
+            "type": "string",
+            "example": "Paneer Tikka Masala"
+          },
+          "vegetarian": {
+            "type": "boolean",
+            "example": true
+          },
+          "suitable_for": {
+            "type": "integer",
+            "format": "int32",
+            "example": 2
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Paneer"
+            }
+          },
+          "cooking_instructions": {
+            "type": "string",
+            "example": "Parcel Order to be delivered"
+          }
+        }
+      },
+      "updateRecipeRequestElement": {
+        "type": "object",
+        "properties": {
+          "recipe_name": {
+            "type": "string",
+            "example": "Paneer"
+          },
+          "vegetarian": {
+            "type": "boolean",
+            "example": true
+          },
+          "suitable_for": {
+            "type": "integer",
+            "format": "int32",
+            "example": 5
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "Paneer"
+            }
+          },
+          "cooking_instructions": {
+            "type": "string",
+            "example": "Parcel Order"
+          }
+        }
+      }
+    }
+  }
+}
